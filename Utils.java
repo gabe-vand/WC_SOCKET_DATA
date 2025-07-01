@@ -1,5 +1,3 @@
-package WC_SCOKET_DATA;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.net.URI;

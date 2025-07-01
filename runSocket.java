@@ -1,5 +1,3 @@
-package WC_SOCKET_DATA;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;

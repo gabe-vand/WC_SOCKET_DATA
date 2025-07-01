@@ -1,5 +1,3 @@
-package WC_SOCKET_DATA;
-
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.util.concurrent.CompletionStage;
