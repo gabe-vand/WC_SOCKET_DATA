@@ -23,6 +23,23 @@ import java.util.zip.CRC32;
 
 public class Utils
 {
+
+	public static double medianDouble(ArrayList<Double> doubleArr) 
+	{
+		ArrayList<Double> arr = new ArrayList<Double>(doubleArr);
+		Collections.sort(arr);
+		
+		int len = arr.size();
+		if (len % 2 == 0) 
+		{
+			return (arr.get(len / 2 - 1) + arr.get(len / 2)) / 2;
+		} 
+		else 
+		{
+			return arr.get(len / 2);
+		}
+	}
+	
 	public static String extractField(String line, int target) {
 	    String KEY;
 	    switch (target) {

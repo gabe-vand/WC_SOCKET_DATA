@@ -274,9 +274,9 @@ class OrderBook {
         bidsOrders = getOrderFromString(bidsLine);
         asksOrders = getOrderFromString(asksLine);
 
-	    BookUtils.mergeAndTruncate(bids, bidsOrders, asks, asksOrders, 10);
+	    Utils.BookUtils.mergeAndTruncate(bids, bidsOrders, asks, asksOrders, 10);
 
-        long local = checksumUtils.computeChecksum(asks, bids);
+        long local = Utils.checksumUtils.computeChecksum(asks, bids);
         
         if (server != local)
         {
