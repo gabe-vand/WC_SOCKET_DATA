@@ -52,7 +52,7 @@ public class runSocket
 	{
 			
 		List<String> tickers = Utils.getTickers();
-		tickers.remove("SSV/USD"); tickers.remove("K/USD"); //bad tickers - consistenly cause checksum issues for unknown reason
+		tickers.remove("SSV/USD"); tickers.remove("K/USD"); tickers.remove("EUL/USD");//bad tickers - consistenly cause checksum issues for unknown reason
 		System.out.println("Running for " + tickers.size() + " tickers.");
 		System.out.println(tickers);
 		
