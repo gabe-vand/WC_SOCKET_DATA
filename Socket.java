@@ -1,4 +1,4 @@
-package DataCollection;
+package WC_SOCKET_DATA;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -19,9 +19,6 @@ import java.util.Map;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import javax.net.ssl.HttpsURLConnection;
-
-import DataCollection.Utils.BookUtils;
-import DataCollection.Utils.checksumUtils;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;

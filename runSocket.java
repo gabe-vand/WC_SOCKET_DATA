@@ -1,4 +1,4 @@
-package DataCollection;
+package WC_SOCKET_DATA;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -23,8 +23,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-
-import Utils.MathUtils;
 
 
 /*
@@ -372,10 +370,10 @@ public class runSocket
 			}
 			else
 			{
-				result.medianSpread1  = MathUtils.medianDouble(medianSpreads1.get(ticker));
-				result.medianSpread10 = MathUtils.medianDouble(medianSpreads10.get(ticker));
-				result.medianSpread25 = MathUtils.medianDouble(medianSpreads25.get(ticker));
-				result.medianSpread50 = MathUtils.medianDouble(medianSpreads50.get(ticker));
+				result.medianSpread1  = Utils.medianDouble(medianSpreads1.get(ticker));
+				result.medianSpread10 = Utils.medianDouble(medianSpreads10.get(ticker));
+				result.medianSpread25 = Utils.medianDouble(medianSpreads25.get(ticker));
+				result.medianSpread50 = Utils.medianDouble(medianSpreads50.get(ticker));
 			}
 			
 
