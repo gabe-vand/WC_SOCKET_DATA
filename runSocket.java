@@ -54,7 +54,7 @@ public class runSocket
 		List<String> tickers = Utils.getTickers();
 		tickers.remove("SSV/USD"); tickers.remove("K/USD"); tickers.remove("EUL/USD"); tickers.remove("LSETH/USD"); //bad tickers - consistenly cause checksum issues for unknown reason
 		System.out.println("Running for " + tickers.size() + " tickers.");
-		System.out.println(tickers);
+		//System.out.println(tickers);
 		
 		tickers.forEach(tick -> {
 			try {
@@ -148,8 +148,8 @@ public class runSocket
 	    // schedule first run at the top‐of‐the‐minute, then every 60 s
 	    schedulerMin.scheduleAtFixedRate(jobMin, delay, 60_000, TimeUnit.MILLISECONDS);
 	    scheduler5.scheduleAtFixedRate(job5, delay - 1_500, 5_000, TimeUnit.MILLISECONDS);
-	    socketChecker.scheduleAtFixedRate(socketCheck, 7_500, 15_000, TimeUnit.MILLISECONDS);
-	    checksumChecker.scheduleAtFixedRate(checksumCheck, 5_000, 5_000, TimeUnit.MILLISECONDS);
+	    socketChecker.scheduleAtFixedRate(socketCheck, 5_555, 25_000, TimeUnit.MILLISECONDS);
+	    checksumChecker.scheduleAtFixedRate(checksumCheck, 5_000, 14_000, TimeUnit.MILLISECONDS);
 
 	}
 	
@@ -203,7 +203,7 @@ public class runSocket
 
 	    for (int i = 0; i < n; i++) {
 	        if (!seen.contains(i)) {
-	            System.out.println("reconnecting offline socket " + i);
+	            System.out.println("reconnecting offline socket " + i + " with tickers " + socketInfo.get(i));
 	            try { sockets.get(i).ws.abort(); } catch (Exception e) { }
 	            // build + open new
 	            String subMsg;
@@ -431,8 +431,9 @@ public class runSocket
 			
 		}
 		
-		tradeAmounts.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue(Comparator.reverseOrder())).forEach(e -> System.out.print(e.getKey() + ": " + e.getValue() + "  "));
-		System.out.print("\n");
+		System.out.println("Wrote data for new minute");
+		//tradeAmounts.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue(Comparator.reverseOrder())).forEach(e -> System.out.print(e.getKey() + ": " + e.getValue() + "  "));
+		//System.out.print("\n");
 		
 	}
 

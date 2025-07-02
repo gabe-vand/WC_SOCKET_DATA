@@ -280,7 +280,7 @@ class OrderBook {
         
         if (server != local)
         {
-            System.err.println(symbol + " checksum mismatch: server=" + server + " local=" + local);
+            //System.err.println(symbol + " checksum mismatch: server=" + server + " local=" + local);
             return false;
         }
 
